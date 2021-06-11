@@ -4,6 +4,10 @@ import got from 'got';
 export const corsProxy = functions.handler.https.onRequest( async (req, res) => {
 
     res.set('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS, HEAD');
+    res.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.set('Access-Control-Allow-Credentials', 'true');
 
     if (req.method === 'OPTIONS') {
         // Send response to OPTIONS requests
