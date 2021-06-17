@@ -19,7 +19,9 @@ export const corsProxy = functions.handler.https.onRequest( async (req, res) => 
             if (url.startsWith('/')) { url = url.slice(1); }
             url = decodeURI(url);
             console.log(`Requested ${url}`);
-            (await got.get(`${url}`)).pipe(res);
+            const response = await got.get(`${url}`);
+            res.status(200).send(response.body);
+            res.end();
         }
     }
 
