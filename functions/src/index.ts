@@ -11,11 +11,14 @@ export const corsProxy = functions.handler.https.onRequest( async (req, res) => 
         // Send response to OPTIONS requests
         res.send();
     } else {
-        const url = req.params && req.params[0];
+        let url = req.params && req.params[0];
         if (!url) { 
             res.status(400).json({ 'message': 'Missing parameters' }); 
             res.end();
         } else {
+            if (url.startsWith('/')) { url = url.slice(1); }
+            url = decodeURI(url);
+            console.log(`Requested ${url}`);
             (await got.get(`${url}`)).pipe(res);
         }
     }

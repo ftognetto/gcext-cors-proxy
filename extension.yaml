@@ -1,5 +1,5 @@
 name: cors-proxy
-version: 0.0.3
+version: 0.0.4
 specVersion: v1beta  # Firebase Extensions specification version (do not edit)
 
 displayName: Cors Proxy
