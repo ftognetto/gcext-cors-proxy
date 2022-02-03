@@ -7,6 +7,9 @@ description: A proxy that add cors headers to the response
 
 license: Apache-2.0  # The license you want for the extension
 
+sourceUrl: https://github.com/quantosapplications/gcext-cors-proxy
+releaseNotesUrl: https://github.com/quantosapplications/firebase-image-resize-ext/blob/main/CHANGELOG.md
+
 author:
   authorName: Fabrizio Tognetto
   url: https://github.com/quantosapplications  # Author URL
